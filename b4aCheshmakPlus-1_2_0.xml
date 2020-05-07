@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <doclet-version-NOT-library-version>1.04</doclet-version-NOT-library-version>
+    <class>
+        <name>b4a.cheshmak.wrapper.B4aAdsCheshmak</name>
+        <shortname>CheshmakAds</shortname>
+        <owner>activity</owner>
+        <method>
+            <name>setTestMode</name>
+            <comment>run Cheshmak in test mode, don't use in production</comment>
+            <returntype>void</returntype>
+
+        </method>
+
+    </class>
+
+
+    <class>
+        <name>b4a.cheshmak.wrapper.CheshmakBannerAds</name>
+        <shortname>CheshmakBannerAds</shortname>
+        <objectwrapper>me.cheshmak.android.sdk.advertise.CheshmakBannerAd</objectwrapper>
+        <owner>activity</owner>
+        <event>onAdLoaded</event>
+        <method>
+            <name>Initialize</name>
+            <comment>Initializes the AdView</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+        </method>
+    </class>
+    <class>
+        <name>b4a.cheshmak.wrapper.CheshmakMrecAds</name>
+        <shortname>CheshmakMrecAds</shortname>
+        <objectwrapper>me.cheshmak.android.sdk.advertise.CheshmakMrecAd</objectwrapper>
+        <owner>activity</owner>
+        <event>onAdLoaded</event>
+        <method>
+            <name>Initialize</name>
+            <comment>Initializes the MREC</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+        </method>
+
+        <method>
+            <name>getAdHeight</name>
+            <comment>getAdHeight the MREC</comment>
+            <returntype>int</returntype>
+        </method>
+    </class>
+    <class>
+        <name>b4a.cheshmak.wrapper.cheshmakInterstitialAds</name>
+        <shortname>cheshmakInterstitialAds</shortname>
+        <owner>activity</owner>
+        <method>
+            <name>Initialize</name>
+            <comment>initialize class</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+        </method>
+        <method>
+            <name>isLoaded</name>
+            <comment>is Interstitial Ad loaded yet?</comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>show</name>
+            <comment>try showing Interstitial Ad</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+        </method>
+    </class>
+    <class>
+        <name>b4a.cheshmak.wrapper.cheshmakRewardedAds</name>
+        <shortname>cheshmakRewardedAds</shortname>
+        <owner>activity</owner>
+        <method>
+            <name>Initialize</name>
+            <comment>initialize class</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+        </method>
+        <method>
+            <name>isLoaded</name>
+            <comment>is RewardedAds Ad loaded yet?</comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>show</name>
+            <comment>try showing RewardedAds Ad</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+        </method>
+    </class>
+
+
+
+    <version>1.20</version>
+
+
+    <dependsOn>cheshmakplus-1.2.0.aar</dependsOn>
+
+</root>
