@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <doclet-version-NOT-library-version>1.04</doclet-version-NOT-library-version>
+
+    <class>
+        <name>b4a.cheshmak.wrapper.RemoteConfig</name>
+        <shortname>RemoteConfig</shortname>
+        <owner>process</owner>
+
+        <method>
+            <name>getBoolean</name>
+            <comment>getBoolean</comment>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>key</name>
+                <type>String</type>
+            </parameter>
+            <parameter>
+                <name>defaultValue</name>
+                <type>boolean</type>
+            </parameter>
+        </method>
+
+        <method>
+            <name>getInt</name>
+            <comment>getInt</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>key</name>
+                <type>String</type>
+            </parameter>
+            <parameter>
+                <name>defaultValue</name>
+                <type>int</type>
+            </parameter>
+        </method>
+
+        <method>
+            <name>getLong</name>
+            <comment>getLong</comment>
+            <returntype>long</returntype>
+            <parameter>
+                <name>key</name>
+                <type>String</type>
+            </parameter>
+            <parameter>
+                <name>defaultValue</name>
+                <type>long</type>
+            </parameter>
+        </method>
+
+        <method>
+            <name>getString</name>
+            <comment>getString</comment>
+            <returntype>String</returntype>
+            <parameter>
+                <name>key</name>
+                <type>String</type>
+            </parameter>
+            <parameter>
+                <name>defaultValue</name>
+                <type>String</type>
+            </parameter>
+        </method>
+
+        <method>
+            <name>getDouble</name>
+            <comment>getDouble</comment>
+            <returntype>Double</returntype>
+            <parameter>
+                <name>key</name>
+                <type>String</type>
+            </parameter>
+            <parameter>
+                <name>defaultValue</name>
+                <type>Double</type>
+            </parameter>
+        </method>
+
+    </class>
+    <class>
+        <name>b4a.cheshmak.wrapper.B4aCheshmak</name>
+        <shortname>B4aCheshmak</shortname>
+        <owner>activity</owner>
+
+        <method>
+            <name>getCheshmakID</name>
+            <comment>getCheshmakID</comment>
+            <returntype>String</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+
+        </method>
+
+
+
+    </class>
+
+
+
+    <version>4.10</version>
+
+	
+   
+    <dependsOn>analytics-4.1.0.aar</dependsOn>
+
+
+
+
+	
+
+	
+
+	
+</root>

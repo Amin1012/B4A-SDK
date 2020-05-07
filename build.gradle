@@ -1,0 +1,36 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+version '4_1_0'
+
+
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+    maven { url "https://maven.google.com" }
+    mavenCentral()
+    jcenter()
+    //Add Maven block to your repositories section
+    maven {
+        url 'https://repository.cheshmak.me'
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar','*.aar'], dir: 'libs')
+
+    implementation "com.google.firebase:firebase-messaging:17.6.0"
+    implementation "com.google.firebase:firebase-ads:17.2.0"
+    implementation 'me.cheshmak:analytics:4.+'
+
+    implementation 'me.cheshmak:cheshmakplus:1.1.10'
+
+
+
+
+    
+
+}
+

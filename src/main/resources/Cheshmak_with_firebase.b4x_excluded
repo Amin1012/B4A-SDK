@@ -1,0 +1,185 @@
+AddPermission(android.permission.ACCESS_NETWORK_STATE)
+AddPermission(android.permission.ACCESS_WIFI_STATE)
+AddPermission(android.permission.CHANGE_WIFI_STATE)
+AddPermission(android.permission.WAKE_LOCK)
+AddPermission(android.permission.RECEIVE_BOOT_COMPLETED)
+AddPermission(android.permission.INTERNET)
+AddPermission(android.permission.VIBRATE)
+AddPermission(com.google.android.c2dm.permission.RECEIVE)
+
+SetManifestAttribute(xmlns:tools, "http://schemas.android.com/tools")
+AddApplicationText(
+  <activity
+        android:name="com.google.android.gms.ads.AdActivity"
+        android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+        android:theme="@android:style/Theme.Translucent" /> )
+SetApplicationAttribute(android:name, "b4a.cheshmak.wrapper.CheshmakApplication")
+AddApplicationText(
+<meta-data
+   android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+   android:value="true"/>
+<meta-data
+   android:name="com.google.android.gms.version"
+   android:value="@integer/google_play_services_version" />
+<service android:name="com.google.firebase.components.ComponentDiscoveryService" >
+   <meta-data
+      android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+      android:value="com.google.firebase.components.ComponentRegistrar" />
+</service>
+
+
+
+
+<service
+   android:name="b4a.cheshmak.wrapper.CheshmakWithFirebaseService"
+    android:stopWithTask="false"
+    android:priority="200">
+   <intent-filter>
+      <action android:name="com.google.firebase.MESSAGING_EVENT" />
+   </intent-filter>
+</service>
+
+
+<receiver android:name="me.cheshmak.android.sdk.core.receivers.AlarmReceiver" >
+   <intent-filter>
+      <action android:name="android.intent.action.TIME_SET" />
+      <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+      <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+      <action android:name="android.intent.action.DELETE" />
+      <action android:name="me.cheshmak.intent.action.SEND_EVENT" />
+   </intent-filter>
+</receiver>
+<receiver android:name="me.cheshmak.android.sdk.core.receivers.RemoteReceiver">
+   <intent-filter>
+      <action android:name="CHESH_REMOTE_DATA_ACTION" />
+   </intent-filter>
+</receiver>
+<receiver android:name="me.cheshmak.android.sdk.core.receivers.LocationReceiver" />
+<service
+   android:name="me.cheshmak.android.sdk.core.network.NotificationService"
+   android:enabled="true" />
+<receiver
+   android:name="me.cheshmak.android.sdk.core.network.AppStartReceiver"
+   android:enabled="true">
+   <intent-filter>
+      <action android:name="me.cheshmak.start" />
+      <action android:name="android.intent.action.BOOT_COMPLETED" />
+      <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+   </intent-filter>
+</receiver>
+<receiver android:name="me.cheshmak.android.sdk.core.push.MessageHandler" />
+
+<service
+   android:exported="false"
+   android:name="me.cheshmak.android.sdk.core.job.FirebaseJobService">
+   <intent-filter>
+      <action android:name="com.cheshmak.jobdispatcher.ACTION_EXECUTE"/>
+   </intent-filter>
+</service>
+<service
+   android:name="com.google.firebase.iid.FirebaseInstanceIdService"
+   android:exported="true">
+   <intent-filter
+      android:priority="-500">
+      <action
+         android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+   </intent-filter>
+</service>
+<receiver
+   android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+   android:permission="com.google.android.c2dm.permission.SEND"
+   android:exported="true">
+   <intent-filter>
+      <action
+         android:name="com.google.android.c2dm.intent.RECEIVE" />
+   </intent-filter>
+</receiver>
+
+<receiver
+    android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+    android:enabled="true"
+    android:exported="false" />
+
+<receiver
+    android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
+    android:permission="android.permission.INSTALL_PACKAGES"
+    android:enabled="true"
+    android:exported="true">
+
+    <intent-filter>
+
+        <action
+            android:name="com.android.vending.INSTALL_REFERRER" />
+    </intent-filter>
+</receiver>
+
+<service
+    android:name="com.google.android.gms.measurement.AppMeasurementService"
+    android:enabled="true"
+    android:exported="false" />
+
+
+<service
+    android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+    android:permission="android.permission.BIND_JOB_SERVICE"
+    android:enabled="true"
+    android:exported="false" />
+
+<service
+    android:name="com.google.firebase.components.ComponentDiscoveryService"
+    android:exported="false">
+
+    <meta-data
+        android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+        android:value="com.google.firebase.components.ComponentRegistrar" />
+</service>
+
+<provider
+    android:name="com.google.android.gms.ads.MobileAdsInitProvider"
+    android:exported="false"
+    android:authorities="${applicationId}.mobileadsinitprovider"
+    android:initOrder="100" />
+<activity
+   android:name="me.cheshmak.android.sdk.core.ui.InstallActivity"
+   android:launchMode="singleTop"
+   android:theme="@style/Theme.Ches_Transparent" />
+<activity
+   android:name="me.cheshmak.android.sdk.core.ui.DialogActivity"
+   android:launchMode="singleTop"
+   android:layerType="software"
+   android:theme="@style/Theme.Ches_Transparent" />
+
+
+    <activity
+               android:name="com.unity3d.services.ads.adunit.AdUnitActivity"
+               android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+               android:hardwareAccelerated="true"
+               android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+           <activity
+               android:name="com.unity3d.services.ads.adunit.AdUnitTransparentActivity"
+               android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+               android:hardwareAccelerated="true"
+               android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+           <activity
+               android:name="com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity"
+               android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+               android:hardwareAccelerated="false"
+               android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+           <activity
+               android:name="com.unity3d.services.ads.adunit.AdUnitSoftwareActivity"
+               android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+               android:hardwareAccelerated="false"
+               android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+                <activity
+                           android:name="com.chartboost.sdk.CBImpressionActivity"
+                           android:configChanges="keyboardHidden|orientation|screenSize"
+                           android:excludeFromRecents="true"
+                           android:hardwareAccelerated="true"
+                           android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+
+)
+
+
+	AddReplacement(android:name="com.pushpole.sdk.fcm.FcmService",android:name="b4a.cheshmak.wrapper.CheshmakWithFirebaseService" )
+	AddReplacement(android:name="com.pushpole.sdk.PusheB4AMessagingService",android:name="b4a.cheshmak.wrapper.CheshmakWithFirebaseService" )
