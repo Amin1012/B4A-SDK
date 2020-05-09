@@ -25,7 +25,7 @@ dependencies {
     implementation "com.google.firebase:firebase-ads:17.2.0"
     implementation 'me.cheshmak:analytics:4.+'
 
-    implementation 'me.cheshmak:cheshmakplus:1.1.10'
+    implementation 'me.cheshmak:cheshmakplus:1.2.0'
 
 
 
