@@ -1,10 +1,8 @@
 # B4A-SDK
-B4A wrapper for Cheshmak SDK
+سورس کد کتابخانه B4A برای چشمک به صورت متن باز در این ریپازیتوری در دسترس می باشد. شما می توانید در این پروژه مشارکت کرده و Pull Request دهید.
 
+به منظور build این کتابخانه مراحل زیر را در IntelliJ IDEA طی کنید:
+Gradle -> tasks -> build
+برای اطلاعات بیشتر درباره نحوه build کردن به لینک زیر مراجعه کنید:
 https://www.cheshmak.me/docs/b4a-sdk/
 
-IntelliJ IDEA
-
-We use Gradle to build
-
-Gradle -> tasks -> build
