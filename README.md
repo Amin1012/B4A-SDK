@@ -15,6 +15,6 @@
   
 https://www.cheshmak.me/docs/b4a-sdk/  
   
-  [فیلم آموزشی](https://www.cheshmak.me/docs/wp-content/uploads/2020/05/Compile_B4A_Wrappper_HD_Final.mp4)
+https://www.cheshmak.me/docs/wp-content/uploads/2020/05/Compile_B4A_Wrappper_HD_Final.mp4
 
 
