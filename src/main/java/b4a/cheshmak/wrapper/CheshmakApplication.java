@@ -17,6 +17,7 @@ public class CheshmakApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        if(Build.VERSION.SDK_INT < 21) return;
         Log.d(tag, "onCreate()");
         try {
 
